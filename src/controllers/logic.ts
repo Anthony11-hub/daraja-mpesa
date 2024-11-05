@@ -77,6 +77,8 @@ export const callback: RequestHandler = async (req, res, next) => {
       res.status(400).json({ error: "transaction not processed" });
     }
 
+    console.log(callbackData.Body.stkCallback.CallbackMetadata);
+
     const phone = callbackData.Body.stkCallback.CallbackMetadata.Item[4].value;
     const amount = callbackData.Body.stkCallback.CallbackMetadata.Item[0].value;
     const txnId = callbackData.Body.stkCallback.CallbackMetadata.Item[1].value;
