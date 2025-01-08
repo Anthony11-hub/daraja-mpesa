@@ -24,7 +24,7 @@ export const generateToken: RequestHandler = async (
     };
 
     const response = await axios.get(
-      "https://api.safaricom.co.ke/oauth/v1/generate",
+      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
       config
     );
 

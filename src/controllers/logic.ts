@@ -30,12 +30,16 @@ export const stkPush: RequestHandler = async (
       },
     };
 
-    const shortcode = "4149541";
+    const shortcode = process.env.LIVE_SHORTCODE;
     const passkey = process.env.LIVE_PASS_KEY;
 
-    const password = Buffer.from(shortcode + passkey + timestamp).toString(
-      "base64"
-    );
+    let password;
+
+    if (shortcode && passkey) {
+      password = Buffer.from(shortcode + passkey + timestamp).toString(
+        "base64"
+      );
+    }
 
     const body = {
       BusinessShortCode: shortcode,
