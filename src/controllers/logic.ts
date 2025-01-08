@@ -30,8 +30,8 @@ export const stkPush: RequestHandler = async (
       },
     };
 
-    const shortcode = "174379";
-    const passkey = process.env.PASS_KEY;
+    const shortcode = "4149541";
+    const passkey = process.env.LIVE_PASS_KEY;
 
     const password = Buffer.from(shortcode + passkey + timestamp).toString(
       "base64"
@@ -46,13 +46,13 @@ export const stkPush: RequestHandler = async (
       PartyA: `254${phone.substring(1)}`,
       PartyB: shortcode,
       PhoneNumber: `254${phone.substring(1)}`,
-      CallBackURL: "https://api.bluedartagencies.com/callback",
+      CallBackURL: "https://5d27-41-80-113-52.ngrok-free.app/callback",
       AccountReference: `254${phone.substring(1)}`,
       TransactionDesc: "Test",
     };
 
     const response = await axios.post(
-      "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
+      "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
       body,
       config
     );
