@@ -50,7 +50,7 @@ export const stkPush: RequestHandler = async (
       PartyA: `254${phone.substring(1)}`,
       PartyB: shortcode,
       PhoneNumber: `254${phone.substring(1)}`,
-      CallBackURL: "https://5d27-41-80-113-52.ngrok-free.app/callback",
+      CallBackURL: "https://api.bluedartagencies.com/callback",
       AccountReference: `254${phone.substring(1)}`,
       TransactionDesc: "Test",
     };
