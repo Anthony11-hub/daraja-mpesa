@@ -30,8 +30,8 @@ export const stkPush: RequestHandler = async (
       },
     };
 
-    const shortcode = "174379";
-    const passkey = process.env.PASS_KEY;
+    const shortcode = "4149541";
+    const passkey = process.env.LIVE_PASS_KEY;
 
     const password = Buffer.from(shortcode + passkey + timestamp).toString(
       "base64"
@@ -52,7 +52,7 @@ export const stkPush: RequestHandler = async (
     };
 
     const response = await axios.post(
-      "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
+      "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
       body,
       config
     );
