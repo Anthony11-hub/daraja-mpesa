@@ -11,8 +11,8 @@ export const generateToken: RequestHandler = async (
   next
 ) => {
   try {
-    const key = process.env.LIVE_CONSUMER_KEY;
-    const secret = process.env.LIVE_CONSUMER_SECRET;
+    const key = process.env.CONSUMER_KEY;
+    const secret = process.env.CONSUMER_SECRET;
 
     const auth = Buffer.from(`${key}:${secret}`).toString("base64");
 
@@ -24,7 +24,7 @@ export const generateToken: RequestHandler = async (
     };
 
     const response = await axios.get(
-      "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
+      "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",
       config
     );
 
