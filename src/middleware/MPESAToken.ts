@@ -30,6 +30,8 @@ export const generateToken: RequestHandler = async (
 
     const token = response.data.access_token;
 
+    // console.log(token)
+
     // Attach the token to the request object
     req.token = token;
 
